@@ -14,14 +14,13 @@ public class WorkerThread implements Runnable{
     @Override
     public void run() {
         System.out.println(Thread.currentThread().getName() + " Start. Command" + command);
-        processCommand();
+        processCommand(2000);
         System.out.println(Thread.currentThread().getName() + " End. Command" + command);
-        processCommand();
     }
 
-    private void processCommand(){
+    private void processCommand(int runTime){
         try {
-            Thread.sleep(1000);
+            Thread.sleep(runTime);
         }catch (Exception e){
             e.printStackTrace();
         }

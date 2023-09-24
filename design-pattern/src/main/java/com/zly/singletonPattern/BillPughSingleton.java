@@ -6,4 +6,5 @@ package com.zly.singletonPattern;
  * @date 2023/8/11 16:54
  **/
 public class BillPughSingleton {
-        }
+
+}

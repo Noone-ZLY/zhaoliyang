@@ -505,7 +505,7 @@ public class LinkedList{
         dummry_node.next = head;
         ListNode first = dummry_node;
         while(first != null && first.next != null && first.next.next != null){
-            System.out.println(first.val);;
+            System.out.println(first.val);
             if(first.next.val == first.next.next.val){
                 ListNode second = first.next;
                 while(second != null && second.val == first.next.val){

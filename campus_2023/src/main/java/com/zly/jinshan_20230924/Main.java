@@ -1,40 +1,73 @@
-package com.zly.jinshan_20230924;
-
-import java.util.List;
 import java.util.Scanner;
+import java.util.Stack;
 
-/**
- * @author : zhaoliyang
- * @description :
- * @createDate : 2023/9/24 19:44
- */
 public class Main {
-    public static boolean search(char ch, char[] yuan){
-        int left = 0, right = yuan.length - 1;
-        while(left <= right){
-            int mid = left + (right - left) / 2;
-            if(ch == yuan[mid]){
-                return true;
-            }else if(ch < yuan[mid]){
-                right = mid - 1;
-            }else{
-                left = mid + 1;
-            }
-        }
-        return false;
-    }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        char[] chars = scanner.next().toCharArray();
-        char[] yuan = {'a', 'e', 'i', 'o', 'u'};
-        int y = 0, f = 0;
-        for (int i = 0; i < chars.length; i++) {
-            if(search(chars[i], yuan)){
-                y++;
+        String words = scanner.nextLine();
+        String[] ss = words.split(" ");
+        String str = "";
+        for(String s : ss){
+            str += s;
+        }
+        Stack<Double> numStack = new Stack<>();
+        Stack<Character> opStack = new Stack<>();
+        double ans;
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+//            if(c == ' '){
+//                continue;
+//            }
+            if (Character.isDigit(c)) {
+                int j = i;
+                while (j < str.length() && Character.isDigit(str.charAt(j))) {
+                    j++;
+                }
+                double num = Double.parseDouble(str.substring(i, j));
+                numStack.push(num);
+                i = j - 1;
+            } else {
+                while (!opStack.isEmpty() && compare(opStack.peek(), c) >= 0) {
+                    double b = numStack.pop();
+                    double a = numStack.pop();
+                    char op = opStack.pop();
+                    double result = calculate(a, b, op);
+                    numStack.push(result);
+                }
+                opStack.push(c);
             }
         }
-        f = chars.length - y;
-//        System.out.println(y + " " + f);
-        System.out.println(f <= 2 * y - 1 ? (y + f) : (y + (2 * y - 1)));
+        while (!opStack.isEmpty()) {
+            double b = numStack.pop();
+            double a = numStack.pop();
+            char op = opStack.pop();
+            double result = calculate(a, b, op);
+            numStack.push(result);
+        }
+        ans = numStack.pop();
+        System.out.println(ans);
+    }
+
+    public static int compare(char a, char b) {
+        if ((a == '+' || a == '-') && (b == '*' || b == '/')) {
+            return -1;
+        } else if ((a == '*' || a == '/') && (b == '+' || b == '-')) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public static double calculate(double num1, double num2, char ch) {
+        if(ch == '+'){
+            return num1 + num2;
+        }else if(ch == '-'){
+            return num1 - num2;
+        }else if(ch == '*'){
+            return num1 * num2;
+        }else if(ch == '/'){
+            return num1 / num2;
+        }
+        return 0;
     }
 }

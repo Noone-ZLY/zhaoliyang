@@ -1,4 +1,4 @@
-package com.zly.collections;
+package com.zly.collections.map;
 
 import java.util.HashMap;
 import java.util.Map;

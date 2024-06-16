@@ -10,7 +10,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>proxy</module>
-        <module>arrayList</module>
         <module>spring-study</module>
         <module>juc</module>
         <module>algorithm</module>

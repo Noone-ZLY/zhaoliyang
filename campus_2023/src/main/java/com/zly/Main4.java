@@ -1,56 +1,49 @@
 package com.zly;
 
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author : Noone
  * @version : v1.0
  * @createTime : 2023/9/7 20:21
- * @description :
+ * @description :[0, 1, 2, 3] target = 3
  */
+class Worker implements Runnable{
+    String name;
+    public Worker(String name){
+        this.name = name;
+    }
+    @Override
+    public void run() {
+        System.out.println("i am " + name);
+    }
+}
+
 public class Main4 {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        int m = scanner.nextInt();
-        int[] YRow = new int[n];
-        int[] YCol = new int[m];
-        int[] ORow = new int[n];
-        int[] OCol = new int[m];
-        int[] URow = new int[n];
-        int[] UCol = new int[m];
+    public static List<List<Integer>> res = new ArrayList<>();
+    public static List<Integer> temp = new ArrayList<>();
+    public static void main(String[] args) throws Exception{
+        int[] nums = {0, 1, 2, 3};
+        int target = 3;
+        dfs(nums, 0, target, 0);
+        for(List<Integer> list : res){
+            System.out.println(Arrays.toString(list.toArray()));
+        }
+    }
 
-        char[][] matrix = new char[n][m];
-        for(int i = 0; i < n; i++){
-            matrix[i] = scanner.next().toCharArray();
+    public static void dfs(int[] nums, int sum, int target, int index){
+        if(sum == target && temp.size() >= 2){
+            res.add(new ArrayList<>(temp));
         }
-
-        for(int i = 0; i < n; i++){
-            for(int j = 0; j < m; j++){
-                if(matrix[i][j] == 'y'){
-                    ++YRow[i];
-                    ++YCol[j];
-                } else if (matrix[i][j] == 'o') {
-                    ++ORow[i];
-                    ++OCol[j];
-                } else if (matrix[i][j] == 'u') {
-                    ++URow[i];
-                    ++UCol[j];
-                }
-            }
+        if(sum > target){
+            return;
         }
-        long res = 0;
-        for(int i = 0; i < n; i++){
-            for(int j = 0; j < m; j++){
-                if(matrix[i][j] == 'y'){
-                    res += ORow[i] * UCol[j] + OCol[j] * URow[i];
-                } else if (matrix[i][j] == 'o') {
-                    res += YRow[i] * UCol[j] + YCol[j] * URow[i];
-                } else if (matrix[i][j] == 'u'){
-                    res += YRow[i] * OCol[j] + YCol[j] * ORow[i];
-                }
-            }
+        for(int i = index; i < nums.length; i++){
+            temp.add(nums[i]);
+            dfs(nums, sum+nums[i], target, i+1);
+            temp.remove(temp.size()-1);
         }
-        System.out.println(res);
     }
 }

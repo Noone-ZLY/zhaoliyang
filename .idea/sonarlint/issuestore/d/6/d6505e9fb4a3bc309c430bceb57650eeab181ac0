@@ -1,0 +1,10 @@
+
+J
+java:S1066"/Merge this if statement with the enclosing one.(ÔƒŠøÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(’ı­úÿÿÿÿ
+Q	java:S125"<This block of commented-out lines of code should be removed.(ãîˆå
+T
+java:S2130"9Use "Integer.parseInt" for this string-to-int conversion.(ÔƒŠøÿÿÿÿ
+O
+java:S2130"9Use "Integer.parseInt" for this string-to-int conversion.(å”Ÿ…
+S	java:S106%"9Replace this use of System.out or System.err by a logger.(­ÖÏøùÿÿÿÿ

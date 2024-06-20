@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main{
@@ -32,17 +33,14 @@ public class Main{
         return selectedItems;
     }
 
-    public static void main(String[] args) {
-        int[] prices = {10, 20, 30, 20, 10};
-        int[] weights = {1, 2, 3, 1, 4};
-        int budget = 50;
-        int maxWeight = 5;
-
-        List<Integer> selectedItems = selectItems(prices, weights, budget, maxWeight);
-
-        System.out.println("Selected items:");
-        for (Integer num : selectedItems) {
-            System.out.println("Index:" + num);
+    public static List<Integer> main(String[] args) {
+        public List<Integer> lexicalOrder(int n) {
+            int[] nums = new int[n];
+            for(int i = 0; i < n; i++){
+                nums[i] = i + 1;
+            }
+            Arrays.sort(nums, (a, b) -> (String.valueOf(a).compareTo(String.valueOf(b))));
+            return Arrays.asList();
         }
     }
 }

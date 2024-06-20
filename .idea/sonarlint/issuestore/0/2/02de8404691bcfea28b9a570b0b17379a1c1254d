@@ -1,0 +1,8 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¤¹ñëþÿÿÿÿ
+h
+java:S1854
+"MRemove this useless assignment to local variable "eagerInitializedSingleton".(˜Ÿ½æÿÿÿÿÿ
+Y
+java:S1481
+">Remove this unused "eagerInitializedSingleton" local variable.(˜Ÿ½æÿÿÿÿÿ

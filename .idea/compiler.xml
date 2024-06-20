@@ -8,17 +8,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="design-pattern" />
-        <module name="netty" />
-        <module name="campus_2023" />
-        <module name="arrayList" />
-        <module name="algorithm" />
-        <module name="java-study" />
-        <module name="juc" />
         <module name="proxy" />
-        <module name="spring-study" />
+        <module name="juc" />
+        <module name="campus_2023" />
+        <module name="java-study" />
+        <module name="netty" />
+        <module name="algorithm" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="arrayList" target="1.8" />
+      <module name="spring-study" target="1.8" />
       <module name="theadPool" target="1.8" />
     </bytecodeTargetLevel>
   </component>

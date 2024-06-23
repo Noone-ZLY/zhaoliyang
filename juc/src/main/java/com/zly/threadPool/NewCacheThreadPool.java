@@ -12,6 +12,7 @@ public class NewCacheThreadPool {
     public static void main(String[] args) throws InterruptedException {
         ExecutorService cacheThreadPool = Executors.newCachedThreadPool();
         for(int i = 0; i < 5; i++){
+            Thread.sleep(2000);
             WorkerThread workerThread = new WorkerThread("" + i);
             cacheThreadPool.execute(workerThread);
         }

@@ -13,7 +13,9 @@ public class Singleton {
         // 判断单例是否被实例化，如果没有则类对象加锁
         if(instance == null){
             synchronized (Singleton.class){
-                return new Singleton();
+                if(instance == null){
+                    return new Singleton();
+                }
             }
         }
         return instance;

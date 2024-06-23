@@ -1,0 +1,10 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(э±•бщ€€€€
+^
+java:S1854"CRemove this useless assignment to local variable "threadLocalDemo".(Пѕ“Єъ€€€€
+O
+java:S1481"4Remove this unused "threadLocalDemo" local variable.(Пѕ“Єъ€€€€
+N
+java:S1128"3Remove this unused import 'java.io.Externalizable'.(√≠Есю€€€€
+L
+java:S1128"1Remove this unused import 'java.io.Serializable'.(иго¬€€€€€

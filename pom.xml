@@ -10,13 +10,13 @@
     <packaging>pom</packaging>
     <modules>
         <module>proxy</module>
-        <module>spring-study</module>
         <module>juc</module>
         <module>algorithm</module>
         <module>netty</module>
         <module>campus_2023</module>
         <module>design-pattern</module>
         <module>java-study</module>
+        <module>demo-redis</module>
     </modules>
 
     <properties>

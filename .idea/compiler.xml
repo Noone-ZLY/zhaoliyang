@@ -15,10 +15,11 @@
         <module name="java-study" />
         <module name="juc" />
         <module name="proxy" />
-        <module name="spring-study" />
+        <module name="demo-redis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="spring-study" target="8" />
       <module name="theadPool" target="1.8" />
     </bytecodeTargetLevel>
   </component>

@@ -16,7 +16,6 @@
         <module>campus_2023</module>
         <module>design-pattern</module>
         <module>java-study</module>
-        <module>demo-redis</module>
     </modules>
 
     <properties>
